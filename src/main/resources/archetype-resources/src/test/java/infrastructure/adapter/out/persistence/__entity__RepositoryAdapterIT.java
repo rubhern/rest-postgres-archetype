@@ -14,7 +14,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class ${entity}RepositoryAdapterIT {
+class ${entity}RepositoryAdapterIT {
 
     @Autowired
     private ${entity}Service adapter;
@@ -29,7 +29,7 @@ public class ${entity}RepositoryAdapterIT {
 
         // Then
         assertFalse(optional${entity}.isEmpty());
-        ${entity} ${entity} = optional${entity}.get();
-        assertEquals(id, ${entity}.getId());
+        ${entity} ${uncapitalizedEntity} = optional${entity}.get();
+        assertEquals(id, ${uncapitalizedEntity}.getId());
     }
 }
