@@ -26,8 +26,9 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponse> handleTypeMismatch(MethodArgumentTypeMismatchException ex, HttpServletRequest request) {
+        var type = ex.getRequiredType();
         String message = String.format("Invalid value '%s' for parameter '%s'. Expected type: %s",
-                ex.getValue(), ex.getName(), ex.getRequiredType() != null ? ex.getRequiredType().getSimpleName() : "unknown");
+                ex.getValue(), ex.getName(), type != null ? type.getSimpleName() : "unknown");
         return buildErrorResponse(400, message, request);
     }
 
