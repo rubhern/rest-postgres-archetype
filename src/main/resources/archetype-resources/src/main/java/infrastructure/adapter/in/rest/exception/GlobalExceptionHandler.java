@@ -1,10 +1,7 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
-package ${package}.infrastructure.adapter.in.rest.exception;
+package com.videogame.platform.game.infrastructure.adapter.in.rest.exception;
 
-import ${package}.domain.exception.${entity}NotFoundException;
-import ${package}.infrastructure.adapter.in.rest.dto.ErrorResponse;
+import com.videogame.platform.game.domain.exception.GameNotFoundException;
+import com.videogame.platform.game.infrastructure.adapter.in.rest.dto.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -29,12 +26,6 @@ public class GlobalExceptionHandler {
         var type = ex.getRequiredType();
         String message = String.format("Invalid value '%s' for parameter '%s'. Expected type: %s",
                 ex.getValue(), ex.getName(), type != null ? type.getSimpleName() : "unknown");
-        return buildErrorResponse(400, message, request);
-    }
-
-    @ExceptionHandler(MissingServletRequestParameterException.class)
-    public ResponseEntity<ErrorResponse> handleMissingParameter(MissingServletRequestParameterException ex, HttpServletRequest request) {
-        String message = String.format("Missing required parameter: '%s' of type '%s'", ex.getParameterName(), ex.getParameterType());
         return buildErrorResponse(400, message, request);
     }
 

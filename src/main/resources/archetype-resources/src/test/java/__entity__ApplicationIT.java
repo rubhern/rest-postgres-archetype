@@ -9,7 +9,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles("test")
-class ${entity}ApplicationTests {
+class ${entity}ApplicationIT {
 
 	@Test
 	void contextLoads() {
