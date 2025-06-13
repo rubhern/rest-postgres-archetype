@@ -18,6 +18,7 @@
 
     <!-- database -->
     <requiredProperty key="dbName"              defaultValue="${uncapitalizedEntity}"/>
+    <requiredProperty key="dbHost"              defaultValue="localhost"/>
     <requiredProperty key="dbUser"              defaultValue="postgres"/>
     <requiredProperty key="dbPassword"          defaultValue="postgres"/>
   </requiredProperties>
