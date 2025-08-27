@@ -1,0 +1,27 @@
+# ─────────────────────
+# Spring configuration
+# ─────────────────────
+spring:
+  application:
+    name: ${uncapitalizedEntity}
+  # SQL initialization (schema + data scripts)
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:sql/schema.sql
+      data-locations: classpath:sql/data.sql
+
+  datasource:
+    url: jdbc:h2:mem:${uncapitalizedEntity}db;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
