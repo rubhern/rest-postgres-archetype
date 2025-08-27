@@ -81,7 +81,7 @@ uncapitalizedEntity must be entity lowercase (e.g. `game`).
 mvn archetype:generate \
   -DarchetypeGroupId=com.rubhern \
   -DarchetypeArtifactId=rest-postgre-archetype \
-  -DarchetypeVersion=1.0.1 \
+  -DarchetypeVersion=1.0.3 \
   -DarchetypeCatalog=local \
   -DgroupId=com.videogame.platform \
   -DartifactId=game-service \
